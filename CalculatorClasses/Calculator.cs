@@ -8,34 +8,57 @@ namespace CalculatorClasses
 {
     internal class Calculator
     {
-        public double Add(double a, double b)
+        class DivideByZeroException : Exception { }
+
+        static public double Add(double a, double b)
         {
-            throw new NotImplementedException();
+            return a + b;
         }
 
-        public double Add(double[] values)
+        static public double Sub(double a, double b)
         {
-            throw new NotImplementedException();
+            return a - b;
         }
 
-        public double Sub(double a, double b)
+        static public double Mul(double a, double b)
         {
-            throw new NotImplementedException();
+            return a * b;
         }
 
-        public double Sub(double[] values)
+        static public double Div(double a, double b)
         {
-            throw new NotImplementedException();
+            if (b == 0) throw new DivideByZeroException();
+            return a / b;
         }
 
-        public double Mul(double a, double b)
+
+        static public double Add(double[] values)
         {
-            throw new NotImplementedException();
+            return values.Sum();
         }
 
-        public double Div(double a, double b)
+        static public double Mul(double[] values)
         {
-            throw new NotImplementedException();
+            return values.Aggregate(1.0, (agg, value) => agg * value);
+        }
+
+        static public double Sub(double[] values)
+        {
+            double startValue = values.Length > 0 ? values[0] : 0.0;
+            double[] toSubtract = RemoveFirst(values);
+            return toSubtract.Aggregate(startValue, (agg, value) => agg - value);
+        }
+
+        static public double Div(double[] values)
+        {
+            double startValue = values.Length > 0 ? values[0] : 1.0;
+            double[] divisors = RemoveFirst(values);
+            return divisors.Aggregate(startValue, (agg, value) => Div(agg, value));
+        }
+
+        static private double [] RemoveFirst(double[] items)
+        {
+            return items.Skip(1).ToArray();
         }
     }
 }
