@@ -3,15 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_CalculatorConsole", "CalculatorConsole\_CalculatorConsole.csproj", "{DA503047-0FF3-4705-9FD1-74CD7671597C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorClasses", "CalculatorClasses\CalculatorClasses.csproj", "{992E6285-DF77-4831-9117-C1149E877231}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorClasses", "CalculatorClasses\CalculatorClasses.csproj", "{992E6285-DF77-4831-9117-C1149E877231}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorClasses.Test", "CalculatorClasses.Text\CalculatorClasses.Test.csproj", "{BE61AF7D-6071-4206-A5A7-72E93142E063}"
+	ProjectSection(ProjectDependencies) = postProject
+		{992E6285-DF77-4831-9117-C1149E877231} = {992E6285-DF77-4831-9117-C1149E877231}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleHelpers", "ConsoleHelpers\ConsoleHelpers.csproj", "{AAB50772-5CE8-4A27-9BC5-4051B875AE54}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorClasses.Test", "CalculatorClasses.Text\CalculatorClasses.Test.csproj", "{BE61AF7D-6071-4206-A5A7-72E93142E063}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Calculator.csproj", "{699315A9-72C7-4C08-965F-8D8141520C86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorConsole", "Calculator\CalculatorConsole.csproj", "{699315A9-72C7-4C08-965F-8D8141520C86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,18 +18,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DA503047-0FF3-4705-9FD1-74CD7671597C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DA503047-0FF3-4705-9FD1-74CD7671597C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DA503047-0FF3-4705-9FD1-74CD7671597C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DA503047-0FF3-4705-9FD1-74CD7671597C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{992E6285-DF77-4831-9117-C1149E877231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{992E6285-DF77-4831-9117-C1149E877231}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{992E6285-DF77-4831-9117-C1149E877231}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{992E6285-DF77-4831-9117-C1149E877231}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AAB50772-5CE8-4A27-9BC5-4051B875AE54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AAB50772-5CE8-4A27-9BC5-4051B875AE54}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AAB50772-5CE8-4A27-9BC5-4051B875AE54}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AAB50772-5CE8-4A27-9BC5-4051B875AE54}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BE61AF7D-6071-4206-A5A7-72E93142E063}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BE61AF7D-6071-4206-A5A7-72E93142E063}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE61AF7D-6071-4206-A5A7-72E93142E063}.Release|Any CPU.ActiveCfg = Release|Any CPU
