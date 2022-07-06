@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace CalculatorClasses
 {
-    internal class Calculator
+    public class Calculator
     {
-        class DivideByZeroException : Exception { }
-
         static public double Add(double a, double b)
         {
             return a + b;
@@ -27,7 +25,7 @@ namespace CalculatorClasses
 
         static public double Div(double a, double b)
         {
-            if (b == 0) throw new DivideByZeroException();
+            if (b == 0) throw new DivideByZeroException("Divide by zero is not possible.");
             return a / b;
         }
 
