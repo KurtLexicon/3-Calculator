@@ -5,12 +5,12 @@ VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorClasses", "CalculatorClasses\CalculatorClasses.csproj", "{992E6285-DF77-4831-9117-C1149E877231}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorClasses.Test", "CalculatorClasses.Text\CalculatorClasses.Test.csproj", "{BE61AF7D-6071-4206-A5A7-72E93142E063}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorClasses.Test", "CalculatorClasses.Test\CalculatorClasses.Test.csproj", "{BE61AF7D-6071-4206-A5A7-72E93142E063}"
 	ProjectSection(ProjectDependencies) = postProject
 		{992E6285-DF77-4831-9117-C1149E877231} = {992E6285-DF77-4831-9117-C1149E877231}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorConsole", "Calculator\CalculatorConsole.csproj", "{699315A9-72C7-4C08-965F-8D8141520C86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorConsole", "CalculatorConsole\CalculatorConsole.csproj", "{699315A9-72C7-4C08-965F-8D8141520C86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
