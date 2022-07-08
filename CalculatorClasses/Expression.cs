@@ -44,7 +44,7 @@ namespace CalculatorClasses
                 this.baseValue = value.Value;
         }
 
-        public static Expression ParseExpression(string str)
+        public static Expression Parse(string str)
         {
             return ExpressionParser.ParseExpression(str);
         }

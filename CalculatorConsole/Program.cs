@@ -5,27 +5,24 @@ string welcomeString =
 @"==============================================================
 Give an expression to calculate.
 The expression can contain any of these operators: + - * /
-Example: 4 - 6 + 3.2 * 1,5 / 2
+Example: 4 - 6 + 3.2e-2 * 1,5 / 2
 Parantheses are not supported.
 Exit the program by giving an empty input (just press ENTER).
 ==============================================================";
 
-while (true)
-{
+while (true) {
     Console.WriteLine(welcomeString);
     string strExpression = Console.ReadLine() ?? "";
-    if (string.IsNullOrEmpty(strExpression)) break;
+    if (string.IsNullOrWhiteSpace(strExpression)) break;
 
-    try
-    {
-        Expression expression = Expression.ParseExpression(strExpression);
+    try {
+        Expression expression = Expression.Parse(strExpression);
         double result = expression.Calculate();
         Console.WriteLine($"{expression} = {result}");
     }
     catch (ParseException ex) { Console.WriteLine(ex.Message); }
     catch (DivideByZeroException ex) { Console.WriteLine(ex.Message); }
-    catch (Exception ex)
-    {
+    catch (Exception ex) {
         string msg = $"An unexpected error occurred:\n{ex}";
         Console.WriteLine(msg);
     }

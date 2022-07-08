@@ -6,29 +6,42 @@ namespace CalculatorClassesTest
         [Theory]
         [InlineData("1+0+")]
         [InlineData("1+*2")]
-        [InlineData("1+**2")]
-        [InlineData("1+2e-2")]
+        [InlineData("1+++2")]
         public void TestParseFailure(string failingExpression)
         {
             // Action
-            Expression act() => Expression.ParseExpression(failingExpression);
+            Expression act() => Expression.Parse(failingExpression);
             // Assert
             ParseException exception = Assert.Throws<ParseException>(act);
             Assert.Equal("The expression is not in valid format, please try again.", exception.Message);
         }
 
         [Theory]
-        [InlineData("1+2", "1 + 2")]
-        [InlineData("1++-+2", "1 + -2")]
-        [InlineData("1*++-+2", "1 * -2")]
-        [InlineData("1*+-+-+2", "1 * 2")]
+        [InlineData("1++2", "1 + 2")]
+        [InlineData("1+-2", "1 + -2")]
+        [InlineData("1-+2", "1 - 2")]
+        [InlineData("1--2", "1 - -2")]
+        [InlineData("1.2", "1,2")]
+        [InlineData(".2", "0,2")]
+        [InlineData("1.", "1")]
+        [InlineData("1,2", "1,2")]
+        [InlineData(",2", "0,2")]
+        [InlineData("1,", "1")]
+        [InlineData("1+1", "1 + 1")]
+        [InlineData(" 1 + 1 ", "1 + 1")]
         [InlineData("1+2.5+2,5", "1 + 2,5 + 2,5")]
         [InlineData("1+.5+2,", "1 + 0,5 + 2")]
-        [InlineData("+-1/3-4*7*3/2/-3*8", "-1 / 3 - 4 * 7 * 3 / 2 / -3 * 8")]
+        [InlineData("-1/3-4* 7*3/2/-3*8", "-1 / 3 - 4 * 7 * 3 / 2 / -3 * 8")]
+        [InlineData("1+2e-2", "1 + 0,02")]
+        [InlineData("1+2e+2", "1 + 200")]
+        [InlineData("1+2e99", "1 + 2E+99")]
+        [InlineData("1+2E-2", "1 + 0,02")]
+        [InlineData("1+2E+2", "1 + 200")]
+        [InlineData("1+2E99", "1 + 2E+99")]
         public void TestParsexEpression(string str, string expected)
         {
             // Action
-            Expression exp = Expression.ParseExpression(str);
+            Expression exp = Expression.Parse(str);
             string result = exp.ToString();
 
             // Assert
@@ -137,7 +150,5 @@ namespace CalculatorClassesTest
             double result = Calculator.Div(ar);
             Assert.Equal(result, expected);
         }
-
-
     }
 }
